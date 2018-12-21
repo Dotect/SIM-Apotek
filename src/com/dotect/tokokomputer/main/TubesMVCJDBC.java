@@ -9,6 +9,6 @@ package com.dotect.tokokomputer.main;
  *
  * @author Anonymous
  */
-public class TubesMVCJDBC1 {
+public class TubesMVCJDBC {
     
 }
