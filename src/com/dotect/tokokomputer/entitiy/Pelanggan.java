@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.dotect.tokokomputer.database;
+package com.dotect.tokokomputer.entitiy;
 
 import java.util.Objects;
 
