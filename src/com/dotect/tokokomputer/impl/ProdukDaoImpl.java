@@ -8,6 +8,7 @@ package com.dotect.tokokomputer.impl;
 import com.dotect.tokokomputer.entity.Produk;
 import com.dotect.tokokomputer.error.ProdukException;
 import com.dotect.tokokomputer.service.ProdukDao;
+import java.sql.Connection;
 import java.util.List;
 
 /**
@@ -16,6 +17,14 @@ import java.util.List;
  */
 public class ProdukDaoImpl implements ProdukDao{
 
+    private Connection connection;
+
+    public ProdukDaoImpl(Connection connection) {
+        this.connection = connection;
+    }
+    
+    
+    
     @Override
     public void insertProduk(Produk produk) throws ProdukException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
