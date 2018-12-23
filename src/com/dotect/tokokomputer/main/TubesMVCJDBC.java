@@ -5,10 +5,15 @@
  */
 package com.dotect.tokokomputer.main;
 
+import com.dotect.tokokomputer.database.TokoKomputerDatabase;
+import java.sql.SQLException;
+
 /**
  *
  * @author Anonymous
  */
 public class TubesMVCJDBC {
-    
+    public static void main(String[] args) throws SQLException{
+        TokoKomputerDatabase.getConnection();
+    }
 }
