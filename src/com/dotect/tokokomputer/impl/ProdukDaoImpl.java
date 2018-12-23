@@ -18,6 +18,9 @@ import java.util.List;
 public class ProdukDaoImpl implements ProdukDao{
 
     private Connection connection;
+    private final String insertProduk = "INSERT INTO pelanggan (email_pelanggan,password_pelanggan,nama_pelanggan,telepon)"
+            + "VALUES (?,?,?,?)";
+            
 
     public ProdukDaoImpl(Connection connection) {
         this.connection = connection;
