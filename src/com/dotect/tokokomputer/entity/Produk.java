@@ -19,9 +19,12 @@ public class Produk {
     private int berat;
     private String deskripsi;
     private int id_kategori;
+    
+    public Produk(){
+        
+    }
 
-    public Produk(int id_produk, String nama_produk, int harga, int stok, int berat, String deskripsi, int id_kategori) {
-        this.id_produk = id_produk;
+    public Produk(String nama_produk, int harga, int stok, int berat, String deskripsi, int id_kategori) {
         this.nama_produk = nama_produk;
         this.harga = harga;
         this.stok = stok;
