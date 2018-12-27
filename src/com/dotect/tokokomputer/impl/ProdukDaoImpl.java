@@ -46,6 +46,12 @@ public class ProdukDaoImpl implements ProdukDao{
         } catch (SQLException e) {
             throw new ProdukException(e.getMessage());
         } finally {
+            if (statement != null) {
+                try {
+                statement.close();
+                } catch (Exception e) {
+                }
+            }
             
         }
     }
