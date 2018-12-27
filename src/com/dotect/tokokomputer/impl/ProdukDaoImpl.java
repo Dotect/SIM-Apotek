@@ -25,6 +25,9 @@ public class ProdukDaoImpl implements ProdukDao{
     private final String updateProduk = "UPDATE produk SET nama_produk=?,harga=?,stok=?,berat=?,deskripsi=?,id_kategori=? WHERE id_produk=?";
 
     private final String deleteProduk = "DELETE FROM produk WHERE id_produk=?";
+    
+    
+    
     public ProdukDaoImpl(Connection connection) {
         this.connection = connection;
     }
