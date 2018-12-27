@@ -20,9 +20,9 @@ import java.util.List;
 public class ProdukDaoImpl implements ProdukDao{
 
     private Connection connection;
-    private final String insertProduk = "INSERT INTO produk (nama_produk,harga,stok,berat,deskripsi,id_kategori)"
-            + "VALUES (?,?,?,?,?,?)";
+    private final String insertProduk = "INSERT INTO produk (nama_produk,harga,stok,berat,deskripsi,id_kategori) VALUES (?,?,?,?,?,?)";
             
+    private final String updateProduk = "UPDATE produk SET nama_produk=?,harga=?,stok=?,berat=?,deskripsi=?,id_kategori=? WHERE id_produk=?";
 
     public ProdukDaoImpl(Connection connection) {
         this.connection = connection;
