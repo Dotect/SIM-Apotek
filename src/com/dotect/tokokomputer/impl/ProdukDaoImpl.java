@@ -58,7 +58,29 @@ public class ProdukDaoImpl implements ProdukDao{
 
     @Override
     public void updateProduk(Produk produk) throws ProdukException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        PreparedStatement statement = null;
+        try {
+           statement = connection.prepareStatement(updateProduk);
+           statement.setString(1, produk.getNama_produk());
+           statement.setInt(2, produk.getHarga());
+           statement.setInt(3, produk.getStok());
+           statement.setInt(4, produk.getBerat());
+           statement.setString(5, produk.getDeskripsi());
+           statement.setInt(6, produk.getId_kategori());
+           statement.setInt(7, produk.getId_produk());
+           statement.executeUpdate();
+           
+        } catch (SQLException e) {
+            throw new ProdukException(e.getMessage());
+        } finally {
+            if (statement != null) {
+                try {
+                statement.close();
+                } catch (Exception e) {
+                }
+            }
+            
+        }
     }
 
     @Override
