@@ -24,6 +24,7 @@ public class ProdukDaoImpl implements ProdukDao{
             
     private final String updateProduk = "UPDATE produk SET nama_produk=?,harga=?,stok=?,berat=?,deskripsi=?,id_kategori=? WHERE id_produk=?";
 
+    private final String deleteProduk = "DELETE FROM produk WHERE id_produk=?";
     public ProdukDaoImpl(Connection connection) {
         this.connection = connection;
     }
@@ -85,7 +86,23 @@ public class ProdukDaoImpl implements ProdukDao{
 
     @Override
     public void deleteProduk(Integer id) throws ProdukException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        PreparedStatement statement = null;
+        try {
+           statement = connection.prepareStatement(deleteProduk);
+           statement.setInt(1, id);
+           statement.executeUpdate();
+           
+        } catch (SQLException e) {
+            throw new ProdukException(e.getMessage());
+        } finally {
+            if (statement != null) {
+                try {
+                statement.close();
+                } catch (Exception e) {
+                }
+            }
+            
+        }
     }
 
     @Override
